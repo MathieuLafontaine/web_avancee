@@ -2,7 +2,7 @@
 require_once('../classes/dbConnex.php');
 require_once('../classes/modifications.php');
 
-// Create database connection
+// Creation d'une connection
 $db = new dbConnex();
 $instance = new modifications($db);
 ?>
