@@ -14,6 +14,7 @@ abstract class selections
         $this->db = $db;
     }
 
+    //selection de toutes les donnees d'un tableau
     public function select($table, $field = 'id', $order = 'ASC')
     {
         $sql = "SELECT * FROM $table ORDER BY $field $order";
@@ -22,6 +23,7 @@ abstract class selections
         return $stmt->fetchAll();
     }
 
+    //selection d'un seul row d'un tableau
     public function selectId($table, $value, $field = 'id')
     {
         $sql = "SELECT * FROM $table WHERE $field = :$field";
@@ -36,6 +38,7 @@ abstract class selections
         }
     }
 
+    //Selection unique au tableau transactions. Il y a plusieurs inner join dans celui-ci
     public function selectTransactions($table, $field, $order)
     {
         $sql = "SELECT * FROM  $table

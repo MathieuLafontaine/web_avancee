@@ -4,6 +4,7 @@ require_once('selections.php');
 
 class modifications extends selections
 {
+    //fonction pour l'insertion de donnee dans la db 
     public function insert($table, $data)
     {
         $fieldName = implode(', ', array_keys($data));
@@ -17,6 +18,7 @@ class modifications extends selections
         return $this->db->lastInsertId();
     }
 
+    //Fonction pour la modification de donnees dans la db
     public function update($table, $data, $field = "id")
     {
         $fieldName = null;
@@ -37,6 +39,7 @@ class modifications extends selections
         }
     }
 
+    //fonction pour la deletion de donnees dans la db
     public function delete($table, $value, $field = 'id')
     {
 
